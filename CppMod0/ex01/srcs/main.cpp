@@ -1,82 +1,79 @@
-#include "../include.hpp"
-
-Contact::Contact(void)
-{
-	std::cout << "Initialize contact...\n";
-}
-
-Contact::~Contact(void)
-{
-	std::cout << "Destroy contact...\n";
-}
+#include "include.hpp"
 
 PhoneBook::PhoneBook(void)
 {
 	this->index = 0;
-	std::cout << "Initialize repertory: index = " << this->index << std::endl;
-}
-
-PhoneBook::~PhoneBook(void)
-{
-	std::cout << "Destroy repertory...\n";
+	this->old = 0;
 }
 
 void	Contact::setPrivate(void)
 {
 	std::cout << "Enter Phone Numer: ";
-	std::cin >> this->_PhoneNumber;
+	getline(std::cin, this->_PhoneNumber);
 	std::cout << "Enter Darkest Secret: ";
-	std::cin >> this->_PhoneNumber;
+	getline(std::cin, this->_DarkestSecret);
 }
 
 void	Contact::getValues(void) const
 {
-	std::cout << this->FirstName;
-	std::cout << this->FirstName;
-	std::cout << "Enter Darkest Secret: ";
+	std::cout << this->FirstName << std::endl;
+	std::cout << this->LastName << std::endl;
+	std::cout << this->Nickname << std::endl;
+	std::cout << this->_PhoneNumber << std::endl;
+	std::cout << this->_DarkestSecret << std::endl;
 }
 
 void	PhoneBook::Add(void)
 {
 	std::cout << "Enter First Name: ";
-	std::cin >> this->book[this->index].FirstName;
+	getline(std::cin, this->book[this->old].FirstName);
 	std::cout << "Enter Last Name: ";
-	std::cin >> this->book[this->index].LastName;
+	getline(std::cin, this->book[this->old].LastName);
 	std::cout << "Enter Nickname: ";
-	std::cin >> this->book[this->index].Nickname;
-	this->book[this->index].setPrivate();
-	if (this->index == 7)
-		this->index = 0;
-	else
+	getline(std::cin, this->book[this->old].Nickname);
+	this->book[this->old].setPrivate();
+	if (this->index <= 7)
 		this->index++;
+	if (this->old < 7)
+		this->old++;
+	else
+		this->old = 0;
 }
 
-void	getSpace(const char *str)
+void	getSpace(std::string str)
 {
 	int		i;
 	int		j;
 	char	buf[10] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
 
 	i = 0;
-	if (str)
+	while (str[i])
+		i++;
+	j = 9;
+	if (i-- > 10)
 	{
-		while (str[i])
-			i++;
-		j = 9;
-		if (i > 9)
-		{
-			i = 8;
-			buf[j--] = '.';
-		}
-		while (i >= 0)
-			buf[j--] = str[i--];
+		i = 8;
+		buf[j--] = '.';
 	}
+	while (i >= 0)
+		buf[j--] = str[i--];
 	std::cout << "|" << buf;
+}
+
+int		ft_strlen(std::string str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
 void	PhoneBook::Search(void) const
 {
-	int	i;
+	std::string	cmp;
+	int			i;
 
 	i = 0;
 	if (this->index == 0)
@@ -85,61 +82,41 @@ void	PhoneBook::Search(void) const
 	{
 		while (i < this->index)
 		{
-			std::cout << "       " << i + 1;
+			std::cout << "         " << i + 1;
 			getSpace(this->book[i].FirstName);
 			getSpace(this->book[i].LastName);
 			getSpace(this->book[i].Nickname);
 			std::cout << std::endl;
 			i++;
 		}
-		std::cin >> i;
-		if (i > 8 || i <= 0)
-			std::cout << "No contact for index " << i << std::endl;
+		std::cout << "Please enter an index to see the contact details: " << std::endl;
+		getline(std::cin, cmp);
+		if (ft_strlen(cmp) != 1)
+			std::cout << cmp << " is not a valid index." << std::endl;
+		else if (cmp[0] <= '8' && cmp[0] >= '1')
+			this->book[cmp[0] - '1'].getValues();
 		else
-			this->book[i -1].getValues();
+			std::cout << "No contact for index " << cmp << ".\n";
 	}
-}
-
-int	ft_strcmp(const char *a, const char *b)
-{
-	int	i;
-
-	i = 0;
-	if (!a && !b)
-		return (-3);
-	if (!a)
-		return (-1);
-	if (!b)
-		return (-2);
-	while (a[i] && b[i])
-	{
-		if (a[i] != b[i])
-			return (a[i] - b[i] > 0 ? a[i] - b[i] : b[i] - a[i]);
-		i++;
-	}
-	return (0);
 }
 
 int main()
 {
 	PhoneBook	repert;
-	char		cmd[7];
+	std::string	cmd;
 
 	std::cout << "Input one of those command: ADD | SEARCH | EXIT: ";
-	while (std::cin >> cmd)
+	while (getline(std::cin, cmd))
 	{
-		if (ft_strcmp(cmd, "ADD") == 0)
+		if (cmd == "ADD")
 			repert.Add();
-		else if (ft_strcmp(cmd, "SEARCH") == 0)
+		else if (cmd == "SEARCH")
 			repert.Search();
-		else if (ft_strcmp(cmd, "EXIT") == 0)
-		{
-			repert.~PhoneBook();
+		else if (cmd == "EXIT")
 			return (0);
-		}
 		else
 			std::cout << "command not found...\n";
-		std::cout << "Command >";
+		std::cout << "Input: ";
 	}
 	return (0);
 }

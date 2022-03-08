@@ -3,37 +3,34 @@
 
 #include <iomanip>
 #include <iostream>
+#include <string>
 
 class Contact
 {
 	public:
-		char	FirstName[10];
-		char	LastName[10];
-		char	Nickname[10];
+		std::string	FirstName;
+		std::string	LastName;
+		std::string	Nickname;
 
 		void	setPrivate(void);
 		void	getValues(void) const;
-		/* Constructor  */
-		Contact(void);
-		/* Destructor */
-		~Contact(void);
+
 	private:
-		char	_DarkestSecret[100];
-		char	_PhoneNumber[10];
+		std::string	_DarkestSecret;
+		std::string	_PhoneNumber;
 };
 
 class PhoneBook
 {
 	public:
 		int		index;
+		int		old;
 		Contact	book[8];
 
 		void	Add(void);
 		void	Search(void) const;
-		/* Constructor  */
+
 		PhoneBook(void);
-		/* Destructor */
-		~PhoneBook(void);
 };
 
 #endif

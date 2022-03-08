@@ -1,8 +1,12 @@
-NAME = megaphone
+NAME = phone_book
 
 DIR_S = srcs/
 
-SOURCES = megaphone.cpp
+SOURCES = main.cpp
+
+HEADER = include.hpp
+
+INC = inc/
 
 SRCS = $(addprefix $(DIR_S),$(SOURCES))
 
@@ -15,8 +19,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	g++ $(OBJS) $(FLAGS) -o $(NAME)
 
-$(OBJS): $(SRCS)
-	g++ -c $(SRCS) $(FLAGS)
+$(OBJS): $(SRCS) $(INC)$(HEADER)
+	g++ -c $(SRCS) $(FLAGS) -I $(INC)
 
 norme:
 	norminette ./$(DIR_S)

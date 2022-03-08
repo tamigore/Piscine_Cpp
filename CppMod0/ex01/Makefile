@@ -6,6 +6,8 @@ SOURCES = main.cpp
 
 HEADER = include.hpp
 
+INC = inc/
+
 SRCS = $(addprefix $(DIR_S),$(SOURCES))
 
 OBJS = $(SOURCES:.cpp=.o)
@@ -17,8 +19,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	g++ $(OBJS) $(FLAGS) -o $(NAME)
 
-$(OBJS): $(SRCS) $(HEADER)
-	g++ -c $(SRCS) $(FLAGS)
+$(OBJS): $(SRCS) $(INC)$(HEADER)
+	g++ -c $(SRCS) $(FLAGS) -I $(INC)
 
 norme:
 	norminette ./$(DIR_S)

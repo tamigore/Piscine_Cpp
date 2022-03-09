@@ -6,7 +6,7 @@
 #    By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 13:16:56 by tamigore          #+#    #+#              #
-#    Updated: 2022/03/09 13:33:43 by tamigore         ###   ########.fr        #
+#    Updated: 2022/03/09 13:19:09 by tamigore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ NAME = phone_book
 
 DIR_S = srcs/
 
-SOURCES = PhoneBook.cpp
+SOURCES = main.cpp
 
-HEADER = PhoneBook.hpp
+HEADER = include.hpp
 
 INC = inc/
 

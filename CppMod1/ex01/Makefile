@@ -6,19 +6,21 @@
 #    By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 13:16:56 by tamigore          #+#    #+#              #
-#    Updated: 2022/03/09 13:33:43 by tamigore         ###   ########.fr        #
+#    Updated: 2022/03/09 17:16:23 by tamigore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-NAME = phone_book
+NAME = zombie
 
 DIR_S = srcs/
 
-SOURCES = PhoneBook.cpp
+SOURCES =	main.cpp		\
+			Zombie.cpp		\
+			zombieHorde.cpp
 
-HEADER = PhoneBook.hpp
+HEADER = Zombie.hpp
 
 INC = inc/
 

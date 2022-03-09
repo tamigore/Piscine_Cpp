@@ -44,17 +44,19 @@ void	getSpace(std::string str)
 {
 	int		i;
 	int		j;
-	char	buf[10] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
+	char	buf[11] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '\0'};
 
 	i = 0;
 	while (str[i])
 		i++;
 	j = 9;
-	if (i-- > 10)
+	if (i > 10)
 	{
 		i = 8;
 		buf[j--] = '.';
 	}
+	else
+		i--;
 	while (i >= 0)
 		buf[j--] = str[i--];
 	std::cout << "|" << buf;

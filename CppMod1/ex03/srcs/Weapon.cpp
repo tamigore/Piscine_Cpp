@@ -6,28 +6,34 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:27:33 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/09 17:43:46 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/10 19:16:30 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Human.hpp"
+#include "Weapon.hpp"
 
 Weapon::Weapon()
 {
-	std::cout << "Weapon optain" << std::endl;
+//	std::cout << "Weapon init without name" << std::endl;
+}
+
+Weapon::Weapon(std::string type)
+{
+	this->_type = type;
+//	std::cout << type << ": weapon obtain" << std::endl;
 }
 
 Weapon::~Weapon()
 {
-	std::cout << this->_name << ": weapon gone" << std::endl;
+//	std::cout << this->_type << ": weapon gone" << std::endl;
 }
 
-std::string	Weapon::getName( void )
+std::string	Weapon::getType( void )
 {
-	return (this->_name);
+	return (this->_type);
 }
 
-void	Weapon::setName(std::string name)
+void	Weapon::setType(std::string type)
 {
-	this->_name = name;
+	this->_type = type;
 }

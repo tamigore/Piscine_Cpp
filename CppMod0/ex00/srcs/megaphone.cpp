@@ -15,7 +15,8 @@ int main(int ac, char **av)
 	else
 	{
 		for (int i = 1; i < ac; i++)
-			std::cout << UperCase(av[i]);
+			std::cout << std::uppercase << av[i] << "\n";
+			// std::cout << UperCase(av[i]);
 		std::cout << "\n";
 	}
 	return 0;

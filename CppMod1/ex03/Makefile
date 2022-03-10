@@ -6,7 +6,7 @@
 #    By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 13:16:56 by tamigore          #+#    #+#              #
-#    Updated: 2022/03/09 17:36:54 by tamigore         ###   ########.fr        #
+#    Updated: 2022/03/10 17:00:34 by tamigore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,14 @@ NAME = weapon
 
 DIR_S = srcs/
 
-SOURCES =	main.cpp		\
-			Zombie.cpp		\
-			zombieHorde.cpp
+SOURCES =	main.cpp	\
+			HumanA.cpp	\
+			HumanB.cpp	\
+			Weapon.cpp
 
-HEADER = Zombie.hpp
+HEADER =	HumanA.hpp	\
+			HumanB.hpp	\
+			Weapon.hpp
 
 INC = inc/
 
@@ -35,7 +38,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) $(FLAGS) -o $(NAME)
 
-$(OBJS): $(SRCS) $(INC)$(HEADER)
+$(OBJS): $(SRCS) $(INC)
 	$(CC) -c $(SRCS) $(FLAGS) -I $(INC)
 
 bonus: all

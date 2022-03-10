@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.hpp                                          :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 14:28:25 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/09 17:44:59 by tamigore         ###   ########.fr       */
+/*   Created: 2022/03/09 15:43:53 by tamigore          #+#    #+#             */
+/*   Updated: 2022/03/10 20:11:58 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ZOMBIE_HPP_
-# define _ZOMBIE_HPP_
+#include "HumanB.hpp"
+#include "Weapon.hpp"
 
-# include <iostream>
-# include <string>
-# include "Weapon.hpp"
-
-class	HumanA
+void	HumanB::attack( void )
 {
-	private:
+    std::cout << this->_name << " attacks with their " << this->_w->getType() << std::endl;
+}
 
-		std::string _name;
-		
-	
-	public:
+void	HumanB::setWeapon( Weapon &w )
+{
+    this->_w = &w;
+}
 
-		HumanA();
-		~HumanA();
+HumanB::HumanB(std::string name)
+{
+    this->_name = name;
+}
 
-		void		announce( void );
-		std::string	getName( void );
-		void		setName( std::string name );
-};
-
-#endif
+HumanB::~HumanB(void)
+{
+//   std::cout << "HumanA dead" << std::endl;
+}

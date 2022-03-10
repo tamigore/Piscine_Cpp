@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:28:08 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/09 15:29:24 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:45:42 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	randomChump( std::string name )
 {
-	Zombie	*gogolito = newZombie(name);
+	Zombie	gogolito;
 	
-	gogolito->announce();
-	delete gogolito;
+	gogolito.setName(name);
+	gogolito.announce();
 }

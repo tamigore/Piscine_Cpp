@@ -6,7 +6,7 @@
 #    By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 13:16:56 by tamigore          #+#    #+#              #
-#    Updated: 2022/03/09 13:33:43 by tamigore         ###   ########.fr        #
+#    Updated: 2022/03/10 16:35:54 by tamigore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,12 @@ NAME = phone_book
 
 DIR_S = srcs/
 
-SOURCES = PhoneBook.cpp
+SOURCES =	PhoneBook.cpp	\
+			Contact.cpp	\
+			main.cpp
 
-HEADER = PhoneBook.hpp
+HEADER =	PhoneBook.hpp	\
+			Contact.hpp
 
 INC = inc/
 
@@ -33,7 +36,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) $(FLAGS) -o $(NAME)
 
-$(OBJS): $(SRCS) $(INC)$(HEADER)
+$(OBJS): $(SRCS) $(INC)
 	$(CC) -c $(SRCS) $(FLAGS) -I $(INC)
 
 bonus: all

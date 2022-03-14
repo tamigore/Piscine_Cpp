@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:43:24 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/10 16:35:36 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/11 10:22:35 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,53 +14,53 @@
 
 int		Contact::setPrivate(void)
 {
-	std::string str;
+	std::string str[5];
 	int         i = 0;
 	
 	std::cout << "Enter First Name: ";
-	getline(std::cin, str);
-	if (str.length())
-		while (isspace(str[i]))
+	getline(std::cin, str[0]);
+	if (str[0].length())
+		while (isspace(str[0][i]))
 			i++;
-	if (!str.length() || str[i] == '\0')
+	if (!str[0].length() || str[0][i] == '\0')
 		return (0);
-	this->_FirstName = str;
 	std::cout << "Enter Last Name: ";
-	getline(std::cin, str);
+	getline(std::cin, str[1]);
 	i = 0;
-	if (str.length())
-		while (isspace(str[i]))
+	if (str[1].length())
+		while (isspace(str[1][i]))
 			i++;
-	if (!str.length() || str[i] == '\0')
+	if (!str[1].length() || str[1][i] == '\0')
 		return (0);
-	this->_LastName = str;
 	std::cout << "Enter Nickname: ";
-	getline(std::cin, str);
+	getline(std::cin, str[2]);
 	i = 0;
-	if (str.length())
-		while (isspace(str[i]))
+	if (str[2].length())
+		while (isspace(str[2][i]))
 			i++;
-	if (!str.length() || str[i] == '\0')
+	if (!str[2].length() || str[2][i] == '\0')
 		return (0);
-	this->_Nickname = str;
 	std::cout << "Enter Phone Numer: ";
-	getline(std::cin, str);
+	getline(std::cin, str[3]);
 	i = 0;
-	if (str.length())
-		while (isspace(str[i]))
+	if (str[3].length())
+		while (isspace(str[3][i]))
 			i++;
-	if (!str.length() || str[i] == '\0')
+	if (!str[3].length() || str[3][i] == '\0')
 		return (0);
-	this->_PhoneNumber = str;
 	std::cout << "Enter Darkest Secret: ";
-	getline(std::cin, str);
+	getline(std::cin, str[4]);
 	i = 0;
-	if (str.length())
-		while (isspace(str[i]))
+	if (str[4].length())
+		while (isspace(str[4][i]))
 			i++;
-	if (!str.length() || str[i] == '\0')
+	if (!str[4].length() || str[4][i] == '\0')
 		return (0);
-	this->_DarkestSecret = str;
+	this->_FirstName = str[0];
+	this->_LastName = str[1];
+	this->_Nickname = str[2];
+	this->_PhoneNumber = str[3];
+	this->_DarkestSecret = str[4];
 	return (1);
 }
 

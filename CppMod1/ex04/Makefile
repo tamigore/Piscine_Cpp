@@ -6,23 +6,17 @@
 #    By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 13:16:56 by tamigore          #+#    #+#              #
-#    Updated: 2022/03/09 13:19:09 by tamigore         ###   ########.fr        #
+#    Updated: 2022/03/11 12:59:26 by tamigore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-NAME = phone_book
-
-DIR_S = srcs/
+NAME = sed
 
 SOURCES = main.cpp
 
-HEADER = include.hpp
-
-INC = inc/
-
-SRCS = $(addprefix $(DIR_S),$(SOURCES))
+SRCS = $(SOURCES)
 
 OBJS = $(SOURCES:.cpp=.o)
 
@@ -33,8 +27,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) $(FLAGS) -o $(NAME)
 
-$(OBJS): $(SRCS) $(INC)$(HEADER)
-	$(CC) -c $(SRCS) $(FLAGS) -I $(INC)
+$(OBJS): $(SRCS)
+	$(CC) -c $(SRCS) $(FLAGS)
 
 bonus: all
 

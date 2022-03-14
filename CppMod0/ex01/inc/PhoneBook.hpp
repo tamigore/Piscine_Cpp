@@ -8,9 +8,13 @@
 
 class PhoneBook
 {
-	public:
+	private:
+
 		int		index;
 		int		old;
+
+	public:
+
 		Contact	book[8];
 
 		int		Add(void);

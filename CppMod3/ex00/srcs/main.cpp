@@ -1,38 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 14:28:25 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/14 19:20:29 by tamigore         ###   ########.fr       */
+/*   Created: 2022/03/14 18:28:31 by tamigore          #+#    #+#             */
+/*   Updated: 2022/03/14 19:19:46 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ZOMBIE_HPP_
-# define _ZOMBIE_HPP_
+#include "ClapTrap.hpp"
 
-# include <iostream>
-# include <string>
-
-class	Zombie
+int main()
 {
-	private:
-
-		std::string _name;
-	
-	public:
-
-		Zombie();
-		~Zombie();
-
-		void		announce( void );
-		std::string	getName( void );
-		void		setName( std::string name );
-};
-
-Zombie* newZombie( std::string name );
-void	randomChump( std::string name );
-
-#endif
+    ClapTrap    first();
+    ClapTrap    second;
+    return (0);
+}

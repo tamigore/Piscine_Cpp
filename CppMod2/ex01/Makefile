@@ -3,20 +3,27 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+         #
+#    By: user42 <user42@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 13:16:56 by tamigore          #+#    #+#              #
-#    Updated: 2022/03/14 16:56:09 by tamigore         ###   ########.fr        #
+#    Updated: 2022/03/13 15:15:16 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-NAME = sed
+NAME = fixed
 
-SOURCES = main.cpp
+DIR_S = srcs/
 
-SRCS = $(SOURCES)
+SOURCES =	main.cpp		\
+			Fixed.cpp
+
+HEADER = Fixed.hpp
+
+INC = inc/
+
+SRCS = $(addprefix $(DIR_S),$(SOURCES))
 
 OBJS = $(SOURCES:.cpp=.o)
 
@@ -27,8 +34,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) $(FLAGS) -o $(NAME)
 
-$(OBJS): $(SRCS)
-	$(CC) -c $(SRCS) $(FLAGS)
+$(OBJS): $(SRCS) $(INC)$(HEADER)
+	$(CC) -c $(SRCS) $(FLAGS) -I $(INC)
 
 bonus: all
 

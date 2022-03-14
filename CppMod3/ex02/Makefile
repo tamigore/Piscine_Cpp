@@ -3,23 +3,25 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: user42 <user42@student.42.fr>              +#+  +:+       +#+         #
+#    By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 13:16:56 by tamigore          #+#    #+#              #
-#    Updated: 2022/03/13 21:02:55 by user42           ###   ########.fr        #
+#    Updated: 2022/03/14 20:38:23 by tamigore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-NAME = fixed
+NAME = frag
 
 DIR_S = srcs/
 
 SOURCES =	main.cpp		\
-			ClapTrap.cpp
+			ClapTrap.cpp	\
+			FragTrap.cpp
 
-HEADER = ClapTrap.hpp
+HEADER =	ClapTrap.hpp	\
+			FragTrap.hpp
 
 INC = inc/
 

@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 14:28:25 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/10 20:21:39 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/15 12:22:28 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class	HumanA
 	private:
 
 		std::string _name;
-		Weapon		*_w;
+		Weapon		&_w;
 	
 	public:
 

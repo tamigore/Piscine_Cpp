@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 20:22:32 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/14 16:54:50 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/15 12:20:31 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,7 @@ int main(int ac , char **av)
 		int	i = 0;
 		int j = 0;
 		int tmp = 0;
-		std::cout << "HELLO" << std::endl;
 		std::string	str = std::string(buffer);
-		std::cout << "HELLO 1" << std::endl;
 		delete[] buffer;
 		while (str[i])
 		{
@@ -80,6 +78,10 @@ int main(int ac , char **av)
 			if (av[2][j] == '\0')
 			{
 				str = replace_str(str, tmp, i, av[3]);
+				j = 0;
+				while (av[3][j])
+					j++;
+				tmp += j - 1;
 			}
 			i = tmp + 1;
 		}

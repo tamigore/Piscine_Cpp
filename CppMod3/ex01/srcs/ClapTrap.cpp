@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 21:02:04 by user42            #+#    #+#             */
-/*   Updated: 2022/03/14 12:41:34 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/15 11:20:26 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,22 @@
 
 ClapTrap::ClapTrap()
 {
-	this->_Name = "ClapTrap";
+	this->_Name = "Clap";
 	this->_Maxhp = 10;
 	this->_Hp = 10;
 	this->_Ep = 10;
 	this->_Dp = 0;
-	std::cout << "ClapTrap " << " is built by default." << std::endl;
+	std::cout << "ClapTrap " << this->_Name << " is built by default." << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &data)
+{
+	this->_Name = data.getName();
+	this->_Dp = data.getData('D');
+	this->_Hp = data.getData('H');
+	this->_Ep = data.getData('E');
+	this->_Maxhp = this->_Hp;
+	std::cout << "ClapTrap " << this->_Name << " is built by copy." << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string name)
@@ -32,13 +42,20 @@ ClapTrap::ClapTrap(const std::string name)
 	std::cout << "ClapTrap " << this->_Name << " is built." << std::endl;
 }
 
+ClapTrap	&ClapTrap::operator=(const ClapTrap &data)
+{
+	if (this != &data)
+		*this = data;
+	return (*this);
+}
+
 ClapTrap::~ClapTrap()
 {
 	std::cout << "ClapTrap " << this->_Name << " is destroy." << std::endl;
 }
 
 
-void	ClapTrap::attack(const std::string &target)
+void	ClapTrap::attack(const std::string &target) const
 {
 	std::cout << "ClapTrap " << this->_Name << " attacks " << target << ", causing " << this->_Dp << " points of damage!" << std::endl;
 }
@@ -75,12 +92,16 @@ void	ClapTrap::beRepaired(unsigned int amount)
 			this->_Hp = this->_Maxhp;
 		else
 			this->_Hp = this->_Hp + amount;
-		std::cout << "ClapTrap " << this->_Name << " repaire and is now at "
-			<< this->_Hp << " health points!" << std::endl;
+		std::cout << "ClapTrap " << this->_Name << " repaire and is now at " << this->_Hp << " health points!" << std::endl;
 	}
 }
 
-int			ClapTrap::getData(const char c) const
+std::string	ClapTrap::getName(void) const
+{
+	return(this->_Name);
+}
+
+int	ClapTrap::getData(const char c) const
 {
 	if (c == 'H')
 		return (this->_Hp);
@@ -89,9 +110,4 @@ int			ClapTrap::getData(const char c) const
 	else if (c == 'D')
 		return (this->_Dp);
 	return (0);
-}
-
-std::string	ClapTrap::getName(void) const
-{
-	return (this->_Name);
 }

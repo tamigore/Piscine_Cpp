@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 12:53:06 by user42            #+#    #+#             */
-/*   Updated: 2022/03/13 20:40:39 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/15 12:29:58 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class	Fixed
 
 	public:
 	
-	Fixed( void );
+	Fixed();
 	~Fixed();
 	Fixed( const Fixed &nb );
 	Fixed	&operator=( const Fixed &nb );

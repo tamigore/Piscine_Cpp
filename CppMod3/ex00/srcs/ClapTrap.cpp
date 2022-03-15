@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 21:02:04 by user42            #+#    #+#             */
-/*   Updated: 2022/03/14 20:39:44 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/15 11:19:29 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,22 @@
 
 ClapTrap::ClapTrap()
 {
-	this->_Name = "ClapTrap";
+	this->_Name = "Clap";
 	this->_Maxhp = 10;
 	this->_Hp = 10;
 	this->_Ep = 10;
 	this->_Dp = 0;
+	std::cout << "ClapTrap " << this->_Name << " is built by default." << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &data)
 {
-	*this = data;
+	this->_Name = data.getName();
+	this->_Dp = data.getData('D');
+	this->_Hp = data.getData('H');
+	this->_Ep = data.getData('E');
+	this->_Maxhp = this->_Hp;
+	std::cout << "ClapTrap " << this->_Name << " is built by copy." << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string name)
@@ -33,6 +39,7 @@ ClapTrap::ClapTrap(const std::string name)
 	this->_Hp = 10;
 	this->_Ep = 10;
 	this->_Dp = 0;
+	std::cout << "ClapTrap " << this->_Name << " is built." << std::endl;
 }
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &data)

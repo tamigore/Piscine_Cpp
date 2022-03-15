@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:02:25 by user42            #+#    #+#             */
-/*   Updated: 2022/03/14 12:41:36 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/15 11:07:11 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-	FragTrap first("Toto");
-	FragTrap second("Babar");
+	ScavTrap first("Toto");
+	ScavTrap second("Babar");
 
 	first.attack(second.getName());
 	second.takeDamage(first.getData('D'));
@@ -25,8 +25,8 @@ int main()
 	first.beRepaired(first.getData('E'));
 	std::cout << "The sun falls on the world..." << std::endl;
 	std::cout << "ScavTrap enter Gate Keeper mode:" << std::endl;
-	first.highFivesGuys();
-	second.highFivesGuys();
+	first.guardGate();
+	second.guardGate();
 	first.takeDamage(100);
 	second.takeDamage(100);
 	return (0);

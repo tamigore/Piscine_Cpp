@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:08:52 by user42            #+#    #+#             */
-/*   Updated: 2022/03/13 20:45:02 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/15 12:37:17 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 // constructor & destructor
 
-Fixed::Fixed( void )
+Fixed::Fixed()
 {
 	std::cout << "Constructor called" << std::endl;
 	this->_val = 0;
 }
 
-Fixed::~Fixed( void )
+Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
 }
@@ -78,6 +78,9 @@ int		Fixed::toInt(void) const
 
 std::ostream& operator<<(std::ostream &output, const Fixed &data)
 {
-    output << data.toFloat();
-    return output;
+	std::ostream *test = &output;
+	
+	if (test)
+		output << data.toFloat();
+	return output;
 }

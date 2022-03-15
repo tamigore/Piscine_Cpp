@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 21:01:01 by user42            #+#    #+#             */
-/*   Updated: 2022/03/15 10:50:48 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/15 10:54:15 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class ClapTrap
 {
-private:
+protected:
 	std::string _Name;
 	int			_Maxhp;
 	int         _Hp;

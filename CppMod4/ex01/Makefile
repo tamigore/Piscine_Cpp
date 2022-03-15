@@ -6,7 +6,7 @@
 #    By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 13:16:56 by tamigore          #+#    #+#              #
-#    Updated: 2022/03/15 14:27:07 by tamigore         ###   ########.fr        #
+#    Updated: 2022/03/15 18:28:14 by tamigore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,13 @@ DIR_S = srcs/
 SOURCES =	main.cpp	\
 			Animal.cpp	\
 			Dog.cpp		\
-			Cat.cpp
+			Cat.cpp		\
+			Brain.cpp
 
 HEADER =	Animal.hpp	\
 			Cat.hpp		\
-			Dog.hpp
+			Dog.hpp		\
+			Brain.hpp
 
 INC = inc/
 

@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:02:25 by user42            #+#    #+#             */
-/*   Updated: 2022/03/15 16:58:48 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/15 15:18:51 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int main()
 		std::cout << j->getType() << " " << std::endl;
 		std::cout << i->getType() << " " << std::endl;
 		i->makeSound(); //will output the cat sound!
-		j->makeSound(); //will output the dog sound!
-		meta->makeSound(); //will output the animal sound!
+		j->makeSound();
+		meta->makeSound();
 		delete meta;
 		delete j;
 		delete i;

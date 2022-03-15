@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/14 11:33:35 by user42            #+#    #+#             */
-/*   Updated: 2022/03/15 11:22:39 by tamigore         ###   ########.fr       */
+/*   Created: 2022/03/15 17:00:19 by tamigore          #+#    #+#             */
+/*   Updated: 2022/03/15 18:09:57 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _FRAGTRAP_HPP_
-# define _FRAGTRAP_HPP_
+#ifndef _BRAIN_HPP_
+# define _BRAIN_HPP_
 
-#include "ClapTrap.hpp"
+#include <string>
+#include <iostream>
 
-class FragTrap : public ClapTrap
+class Brain
 {
 public:
-	FragTrap();
-	FragTrap(std::string name);
-	FragTrap(const FragTrap &data);
-	~FragTrap();
+	Brain();
+	Brain(const Brain &data);
+	~Brain();
 
-	FragTrap	&operator=(const FragTrap &data);
-	
-	void	highFivesGuys(void) const;
-	void	attack(const std::string &target);
-	void	beRepaired(unsigned int amount);
-	void	takeDamage(unsigned int amount);
+	Brain	&operator=(const Brain &data);
+
+    std::string ideas[100];
 };
 
 #endif

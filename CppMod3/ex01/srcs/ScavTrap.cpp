@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:36:37 by user42            #+#    #+#             */
-/*   Updated: 2022/03/15 11:16:01 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/16 20:21:06 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,15 +61,21 @@ void	ScavTrap::guardGate(void) const
 
 void	ScavTrap::attack(const std::string &target)
 {
-	std::cout << "ScavTrap " << this->_Name << " attacks " << target << ", causing " << this->_Dp << " points of damage!" << std::endl;
+	if (this->_Hp <= 0)
+		std::cout << "ScavTrap is already dead." << std::endl;
+	else if (this->_Ep <= 0)
+		std::cout << "ScavTrap don't the energy to attack." << std::endl;
+	else
+	{
+		std::cout << "ScavTrap " << this->_Name << " attacks " << target << ", causing " << this->_Dp << " points of damage!" << std::endl;
+		this->_Ep -= 1;
+	}
 }
 
 void	ScavTrap::takeDamage(unsigned int amount)
 {
 	if (this->_Hp == 0)
-	{
 		std::cout << "ScavTrap " << this->_Name << " is already dead..." << std::endl;
-	}
 	else
 	{
 		if ((int)(this->_Hp - amount) >= 0)
@@ -83,13 +89,11 @@ void	ScavTrap::takeDamage(unsigned int amount)
 void	ScavTrap::beRepaired(unsigned int amount)
 {
 	if (this->_Hp == this->_Maxhp)
-	{
 		std::cout << "ScavTrap " << this->_Name << " is already full of health!" << std::endl;
-	}
 	else if (this->_Hp == 0)
-	{
 		std::cout << "ScavTrap " << this->_Name << " is already dead..." << std::endl;
-	}
+	else if (this->_Ep <= 0)
+		std::cout << "ScavTrap don't the energy to repair." << std::endl;
 	else
 	{
 		if ((int)(this->_Hp + amount) > this->_Maxhp)

@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 21:01:01 by user42            #+#    #+#             */
-/*   Updated: 2022/03/15 11:14:40 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/16 20:06:31 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ public:
 
 	ClapTrap	&operator=(const ClapTrap &data);
 
-	void		attack(const std::string& target) const;
+	void		attack(const std::string& target);
 	void		takeDamage(const unsigned int amount);
 	void		beRepaired(const unsigned int amount);
 	std::string	getName(void) const;

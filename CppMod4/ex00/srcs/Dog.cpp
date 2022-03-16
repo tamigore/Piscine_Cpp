@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:36:37 by user42            #+#    #+#             */
-/*   Updated: 2022/03/15 14:23:33 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/16 15:35:59 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ Dog::Dog()
 	std::cout << "Dog " << this->_type << " is built by default." << std::endl;
 }
 
-Dog::Dog(std::string name)
+Dog::Dog(std::string type)
 {
-	this->_type = name;
+	this->_type = type;
 	std::cout << "Dog " << this->_type << " is built." << std::endl;
 }
 
@@ -44,5 +44,5 @@ Dog	&Dog::operator=(const Dog &data)
 
 void	Dog::makeSound(void) const
 {
-	std::cout << this->_type << ": OUAF!" << std::endl;
+	std::cout << "OUAF!" << std::endl;
 }

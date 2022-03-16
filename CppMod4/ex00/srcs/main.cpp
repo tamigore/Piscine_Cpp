@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:02:25 by user42            #+#    #+#             */
-/*   Updated: 2022/03/15 16:58:48 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/16 15:36:57 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int main()
 		const Animal* j = new Dog();
 		const Animal* i = new Cat();
 		std::cout << j->getType() << " " << std::endl;
+		j->makeSound(); //will output the dog sound
 		std::cout << i->getType() << " " << std::endl;
-		i->makeSound(); //will output the cat sound!
-		j->makeSound(); //will output the dog sound!
+		i->makeSound(); //will output the cat sound
 		meta->makeSound(); //will output the animal sound!
 		delete meta;
 		delete j;

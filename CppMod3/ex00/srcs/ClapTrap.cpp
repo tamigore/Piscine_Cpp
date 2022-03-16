@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 21:02:04 by user42            #+#    #+#             */
-/*   Updated: 2022/03/15 11:19:29 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/16 20:19:42 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,17 +55,23 @@ ClapTrap::~ClapTrap()
 }
 
 
-void	ClapTrap::attack(const std::string &target) const
+void	ClapTrap::attack(const std::string &target)
 {
-	std::cout << "ClapTrap " << this->_Name << " attacks " << target << ", causing " << this->_Dp << " points of damage!" << std::endl;
+	if (this->_Hp <= 0)
+		std::cout << "ClapTrap is already dead." << std::endl;
+	else if (this->_Ep <= 0)
+		std::cout << "ClapTrap don't have the energy to attack." << std::endl;
+	else
+	{
+		std::cout << "ClapTrap " << this->_Name << " attacks " << target << ", causing " << this->_Dp << " points of damage!" << std::endl;
+		this->_Ep -= 1;
+	}
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->_Hp == 0)
-	{
 		std::cout << "ClapTrap " << this->_Name << " is already dead..." << std::endl;
-	}
 	else
 	{
 		if ((int)(this->_Hp - amount) >= 0)
@@ -79,13 +85,11 @@ void	ClapTrap::takeDamage(unsigned int amount)
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->_Hp == this->_Maxhp)
-	{
 		std::cout << "ClapTrap " << this->_Name << " is already full of health!" << std::endl;
-	}
 	else if (this->_Hp == 0)
-	{
 		std::cout << "ClapTrap " << this->_Name << " is already dead..." << std::endl;
-	}
+	else if (this->_Ep <= 0)
+		std::cout << "ClapTrap don't the energy to repair." << std::endl;
 	else
 	{
 		if ((int)(this->_Hp + amount) > this->_Maxhp)
@@ -93,6 +97,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		else
 			this->_Hp = this->_Hp + amount;
 		std::cout << "ClapTrap " << this->_Name << " repaire and is now at " << this->_Hp << " health points!" << std::endl;
+		this->_Ep--;
 	}
 }
 

@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/14 11:02:25 by user42            #+#    #+#             */
-/*   Updated: 2022/03/16 15:46:20 by tamigore         ###   ########.fr       */
+/*   Created: 2022/03/15 17:00:19 by tamigore          #+#    #+#             */
+/*   Updated: 2022/03/15 18:09:57 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef _BRAIN_HPP_
+# define _BRAIN_HPP_
 
-int main()
+#include <string>
+#include <iostream>
+
+class Brain
 {
-	{
-		int i = 0;
-		Animal* meta[10];
-		while (i < 5)
-			meta[i++] = new Cat("Chaton");
-		while (i < 10)
-			meta[i++] = new Dog("Toutou");
-		i = 0;
-		while (i < 10)
-			meta[i++]->makeSound();
-		i = 0;
-		while (i < 10)
-			delete meta[i++];
-	}
-	return (0);
-}
+public:
+	Brain();
+	Brain(const Brain &data);
+	~Brain();
+
+	Brain	&operator=(const Brain &data);
+
+    std::string ideas[100];
+};
+
+#endif

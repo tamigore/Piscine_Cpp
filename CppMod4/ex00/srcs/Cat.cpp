@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:36:37 by user42            #+#    #+#             */
-/*   Updated: 2022/03/15 14:21:27 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/16 15:36:09 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ Cat::Cat()
 	std::cout << "Cat " << this->_type << " is built by default." << std::endl;
 }
 
-Cat::Cat(std::string name)
+Cat::Cat(std::string type)
 {
-	this->_type = name;
+	this->_type = type;
 	std::cout << "Cat " << this->_type << " is built." << std::endl;
 }
 
@@ -44,5 +44,5 @@ Cat	&Cat::operator=(const Cat &data)
 
 void	Cat::makeSound(void) const
 {
-	std::cout << this->_type << ": Miaou..." << std::endl;
+	std::cout << "Miaou..." << std::endl;
 }

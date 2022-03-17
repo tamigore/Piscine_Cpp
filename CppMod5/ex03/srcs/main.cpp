@@ -6,28 +6,39 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 17:13:20 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/17 14:35:43 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/17 18:53:51 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
-	Bureaucrat	*bureaucrat = new Bureaucrat("Bob", 2);
-	Bureaucrat	*stagiaire = new Bureaucrat("Ted", 149);
-	Form		*doc = new Form("doc", 1, 1);
-	Form		*trash = new Form();
+	Bureaucrat				*bureaucrat = new Bureaucrat("Bob", 2);
+	Bureaucrat				*stagiaire = new Bureaucrat("Ted", 149);
+	ShrubberyCreationForm	shrub("tree");
+	PresidentialPardonForm	president("Tadeo");
+	RobotomyRequestForm		robot("coco");
+	Intern					noob;
 	
 	try
 	{
-		std::cout << *bureaucrat << " want to signe " << *doc << std::endl;
-		bureaucrat->signForm(*doc);
+		std::cout << *bureaucrat << std::endl;
 		bureaucrat->upGrade();
 		std::cout << bureaucrat->getName() << " upgraded ! Felicitations! " << std::endl;
 		std::cout << *bureaucrat << std::endl;
-		bureaucrat->signForm(*doc);
+		shrub.execute(*bureaucrat);
+		std::cout << std::endl;
+		robot.execute(*bureaucrat);
+		std::cout << std::endl;
+		president.execute(*bureaucrat);
+		std::cout << std::endl;
+		bureaucrat->executeForm(president);
+		std::cout << std::endl;
 		bureaucrat->upGrade();
 		std::cerr << "Exception not working..." << std::endl;
 	}
@@ -36,14 +47,16 @@ int main()
 		std::cerr << "Exception : " << e.what() << std::endl;
 	}
 
+	ShrubberyCreationForm	*new1 = noob.makeForm();
+	PresidentialPardonForm	*new2 = noob.makeForm();
+	RobotomyRequestForm		*new3 = noob.makeForm();
+
 	try
 	{
 		std::cout << *stagiaire << std::endl;
-		bureaucrat->signForm(*trash);
 		stagiaire->downGrade();
 		std::cout << stagiaire->getName() << " downgraded ! That's suck! " << std::endl;
 		std::cout << *stagiaire << std::endl;
-		bureaucrat->signForm(*trash);
 		stagiaire->downGrade();
 		std::cerr << "Exception not working..." << std::endl;
 	}
@@ -78,7 +91,5 @@ int main()
 	
 	delete bureaucrat;
 	delete stagiaire;
-	delete doc;
-	delete trash;
 	return (0);
 }

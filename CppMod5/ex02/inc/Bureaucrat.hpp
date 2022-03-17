@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 17:13:52 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/17 12:15:00 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/17 18:16:45 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ public:
 	void		upGrade(void);
 	void		downGrade(void);
 	void		signForm(Form &doc);
+	void		executeForm(const Form &form);
 
 	class GradeTooHighException : public std::exception
 	{

@@ -6,7 +6,7 @@
 #    By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 13:16:56 by tamigore          #+#    #+#              #
-#    Updated: 2022/03/17 12:05:44 by tamigore         ###   ########.fr        #
+#    Updated: 2022/03/17 18:41:30 by tamigore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,21 @@ NAME = bureau
 
 DIR_S = srcs/
 
-SOURCES =	main.cpp		\
-			Bureaucrat.cpp	\
-			Form.cpp
+SOURCES =	main.cpp					\
+			Bureaucrat.cpp				\
+			Form.cpp					\
+			ShrubberyCreationForm.cpp	\
+			RobotomyRequestForm.cpp		\
+			PresidentialPardonForm.cpp	\
+			Intern.cpp
 
-HEADER =	Bureaucrat.hpp	\
-			Form.hpp
+
+HEADER =	Bureaucrat.hpp				\
+			Form.hpp					\
+			ShrubberyCreationForm.hpp	\
+			RobotomyRequestForm.hpp		\
+			PresidentialPardonForm.hpp	\
+			Intern.hpp
 
 INC = inc/
 

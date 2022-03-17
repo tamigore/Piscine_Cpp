@@ -16,7 +16,8 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
-#include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -37,6 +38,7 @@ public:
 	std::string	getName(void) const;
 	int			getGrade(const char c) const;
 	bool		getSign(void) const;
+	void		setSign(bool i);
 
 	class GradeTooHighException : public std::exception
 	{

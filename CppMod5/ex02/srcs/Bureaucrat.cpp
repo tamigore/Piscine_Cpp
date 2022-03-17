@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 17:15:09 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/17 12:40:14 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/17 18:26:51 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,22 @@ void		Bureaucrat::signForm(Form &doc)
 	}
 	else
 		std::cout << *this << " couldn't signed form because grade was insuficient." << std::endl;
+}
+
+void	Bureaucrat::executeForm(const Form &form)
+{
+	try
+	{
+		form.execute(*this);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Exeption :" << std::endl;
+		std::cout << e.what() << std::endl;
+		std::cout << this->getName() << " could not execute: " << form << std::endl;
+		std::cout << this->getName() << " has grade " << this->getGrade() <<  std::endl;
+	}
+	
 }
 
 Bureaucrat::GradeTooHighException::GradeTooHighException() throw() {}

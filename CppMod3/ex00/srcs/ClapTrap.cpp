@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 21:02:04 by user42            #+#    #+#             */
-/*   Updated: 2022/03/16 20:19:42 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/17 10:32:54 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ ClapTrap::~ClapTrap()
 void	ClapTrap::attack(const std::string &target)
 {
 	if (this->_Hp <= 0)
-		std::cout << "ClapTrap is already dead." << std::endl;
+		std::cout << "ClapTrap " << this->_Name << " is already dead." << std::endl;
 	else if (this->_Ep <= 0)
-		std::cout << "ClapTrap don't have the energy to attack." << std::endl;
+		std::cout << "ClapTrap " << this->_Name << " don't have the energy to attack." << std::endl;
 	else
 	{
 		std::cout << "ClapTrap " << this->_Name << " attacks " << target << ", causing " << this->_Dp << " points of damage!" << std::endl;
@@ -89,7 +89,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	else if (this->_Hp == 0)
 		std::cout << "ClapTrap " << this->_Name << " is already dead..." << std::endl;
 	else if (this->_Ep <= 0)
-		std::cout << "ClapTrap don't the energy to repair." << std::endl;
+		std::cout << "ClapTrap " << this->_Name << " don't have the energy to repair." << std::endl;
 	else
 	{
 		if ((int)(this->_Hp + amount) > this->_Maxhp)

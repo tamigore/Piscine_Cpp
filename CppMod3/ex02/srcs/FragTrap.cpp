@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:36:37 by user42            #+#    #+#             */
-/*   Updated: 2022/03/16 20:20:51 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/17 10:31:34 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ void	FragTrap::highFivesGuys(void) const
 void	FragTrap::attack(const std::string &target)
 {
 	if (this->_Hp <= 0)
-		std::cout << "FragTrap is already dead." << std::endl;
+		std::cout << "FragTrap " << this->_Name << " is already dead." << std::endl;
 	else if (this->_Ep <= 0)
-		std::cout << "FragTrap don't the energy to attack." << std::endl;
+		std::cout << "FragTrap " << this->_Name << " don't have the energy to attack." << std::endl;
 	else
 	{
 		std::cout << "FragTrap " << this->_Name << " attacks " << target << ", causing " << this->_Dp << " points of damage!" << std::endl;
@@ -93,7 +93,7 @@ void	FragTrap::beRepaired(unsigned int amount)
 	else if (this->_Hp == 0)
 		std::cout << "FragTrap " << this->_Name << " is already dead..." << std::endl;
 	else if (this->_Ep <= 0)
-		std::cout << "FragTrap don't the energy to repair." << std::endl;
+		std::cout << "FragTrap " << this->_Name << " don't have the energy to repair." << std::endl;
 	else
 	{
 		if ((int)(this->_Hp + amount) > this->_Maxhp)

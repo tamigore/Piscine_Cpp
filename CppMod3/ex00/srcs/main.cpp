@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 18:28:31 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/16 20:18:44 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/17 10:26:38 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@ int main()
 	ClapTrap	third = first;
 
 	second.attack("Tad");
-	first.takeDamage(second.getData('D'));
-	third.takeDamage(second.getData('D'));
+	first.takeDamage(2);
+	third.takeDamage(2);
 	first.beRepaired(1);
 	third.beRepaired(100);
-	second.beRepaired(1);
 	while (first.getData('E') > 0)
 		first.attack("caca");
 	first.attack("caca");

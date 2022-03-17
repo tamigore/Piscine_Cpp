@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:02:25 by user42            #+#    #+#             */
-/*   Updated: 2022/03/16 20:17:30 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/17 10:33:34 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int main()
 	first.beRepaired(first.getData('E'));
 	while (first.getData('E') > 0)
 		first.attack("caca");
+	first.attack("caca");
 	std::cout << "The sun falls on the world..." << std::endl;
 	std::cout << "FragTrap search for a friend:" << std::endl;
 	first.highFivesGuys();

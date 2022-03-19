@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 14:47:43 by user42            #+#    #+#             */
-/*   Updated: 2022/03/18 20:13:28 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/19 16:47:15 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char toChar(const double f, const std::string str)
 {
 	char c = static_cast<int>(f);
 
-	if (std::isprint(c) && str.size() == 1)
+	if (str.size() == 1 && std::isprint(str[0]) && (str[0] < '0' || str[0] > '9'))
 		c = str[0];
 	if (std::isprint(c))
 		return c;
@@ -71,7 +71,7 @@ void	printInt(const float f)
 {
 	int	i;
 
-	std::cout << "char: ";
+	std::cout << "int: ";
 	try
 	{
 		i = toInt(f);

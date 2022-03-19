@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 17:15:09 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/17 18:46:50 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/19 15:31:14 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ std::string	RobotomyRequestForm::getTarget(void) const
 
 void		RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
+	srand(time(0));
 	bool	valid = rand() % 2;
 
 	if (executor.getGrade() > this->getGrade('e'))

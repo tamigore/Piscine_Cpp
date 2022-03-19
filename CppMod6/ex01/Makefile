@@ -6,17 +6,26 @@
 #    By: user42 <user42@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 13:16:56 by tamigore          #+#    #+#              #
-#    Updated: 2022/03/19 12:29:44 by user42           ###   ########.fr        #
+#    Updated: 2022/03/19 12:46:27 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-NAME = literal
+NAME = serialize
 
-SRCS =	main.cpp
+DIR_S = srcs/
 
-OBJS = $(SRCS:.cpp=.o)
+SOURCES =	main.cpp		\
+			Data.cpp
+
+HEADER =	Data.hpp
+
+INC = inc/
+
+SRCS = $(addprefix $(DIR_S),$(SOURCES))
+
+OBJS = $(SOURCES:.cpp=.o)
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
@@ -25,8 +34,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) $(FLAGS) -o $(NAME)
 
-$(OBJS): $(SRCS)
-	$(CC) -c $(SRCS) $(FLAGS)
+$(OBJS): $(SRCS) $(INC)
+	$(CC) -c $(SRCS) $(FLAGS) -I $(INC)
 
 bonus: all
 

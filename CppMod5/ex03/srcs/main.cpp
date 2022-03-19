@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
+/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 17:13:20 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/17 18:53:51 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/18 12:13:47 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,23 @@ int main()
 		std::cerr << "Exception : " << e.what() << std::endl;
 	}
 
-	ShrubberyCreationForm	*new1 = noob.makeForm();
-	PresidentialPardonForm	*new2 = noob.makeForm();
-	RobotomyRequestForm		*new3 = noob.makeForm();
+	// ShrubberyCreationForm	*new1 = noob.makeForm("shrubbery creation", "Big");
+	// PresidentialPardonForm	*new2 = noob.makeForm("presidential pardon", "Tadeo");
+	// RobotomyRequestForm		*new3 = noob.makeForm("robotomy request", "ClapTrap");
+
+	Form	*new1 = noob.makeForm("shrubbery creation", "Big");
+	Form	*new2 = noob.makeForm("presidential pardon", "Tadeo");
+	Form	*new3 = noob.makeForm("robotomy request", "ClapTrap");
+
+	std::cout << std::endl;
+	std::cout << *new1 << std::endl;
+	std::cout << *new2 << std::endl;
+	std::cout << *new3 << std::endl;
+	std::cout << std::endl;
+
+	delete new1;
+	delete new2;
+	delete new3;
 
 	try
 	{
@@ -72,6 +86,7 @@ int main()
 	{
 		toHigh = new Bureaucrat("ToHigh", 0);
 		std::cerr << "Exception not working..." << std::endl;
+		delete toHigh;
 	}
 	catch (std::exception & e)
 	{
@@ -82,6 +97,7 @@ int main()
 	{
 		toLow = new Bureaucrat("ToLow", 420);
 		std::cerr << "Exception not working..." << std::endl;
+		delete toLow;
 	}
 	catch (std::exception & e)
 	{

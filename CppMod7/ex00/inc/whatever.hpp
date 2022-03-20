@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:33:35 by user42            #+#    #+#             */
-/*   Updated: 2022/03/20 16:02:05 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/20 15:14:21 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _FRAGTRAP_HPP_
-# define _FRAGTRAP_HPP_
+#ifndef _WHATEVER_HPP_
+# define _WHATEVER_HPP_
 
-#include "ClapTrap.hpp"
+#include <iostream>
 
-class FragTrap : public ClapTrap
+template<typename T>
+const T &max( T &A,  T &B) 
 {
-public:
-	FragTrap();
-	FragTrap(std::string name);
-	FragTrap(const FragTrap &data);
-	~FragTrap();
+	return (A > B ? A : B); 
+}
 
-	FragTrap	&operator=(const FragTrap &data);
-	
-	void	highFivesGuys(void) const;
-	void	attack(const std::string &target);
-};
+template<typename T>
+const T &min( T &A,  T & B) 
+{
+	return (A < B ? A : B); 
+}
+
+template<typename T>
+void	swap( T &A,  T & B) 
+{
+	T	tmp = A;
+
+	A = B;
+	B = tmp;
+}
 
 #endif

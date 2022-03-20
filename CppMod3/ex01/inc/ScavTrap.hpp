@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:33:35 by user42            #+#    #+#             */
-/*   Updated: 2022/03/15 11:16:06 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/20 16:02:04 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ public:
 
 	void	guardGate(void) const;
 	void	attack(const std::string &target);
-	void	beRepaired(unsigned int amount);
-	void	takeDamage(unsigned int amount);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:36:37 by user42            #+#    #+#             */
-/*   Updated: 2022/03/17 10:30:55 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/20 16:02:14 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,37 +69,5 @@ void	ScavTrap::attack(const std::string &target)
 	{
 		std::cout << "ScavTrap " << this->_Name << " attacks " << target << ", causing " << this->_Dp << " points of damage!" << std::endl;
 		this->_Ep -= 1;
-	}
-}
-
-void	ScavTrap::takeDamage(unsigned int amount)
-{
-	if (this->_Hp == 0)
-		std::cout << "ScavTrap " << this->_Name << " is already dead..." << std::endl;
-	else
-	{
-		if ((int)(this->_Hp - amount) >= 0)
-			this->_Hp -= amount;
-		else
-			this->_Hp = 0;
-		std::cout << "ScavTrap " << this->_Name << " takes " << amount << " damage and is now at " << this->_Hp << " health points!" << std::endl;
-	}
-}
-
-void	ScavTrap::beRepaired(unsigned int amount)
-{
-	if (this->_Hp == this->_Maxhp)
-		std::cout << "ScavTrap " << this->_Name << " is already full of health!" << std::endl;
-	else if (this->_Hp == 0)
-		std::cout << "ScavTrap " << this->_Name << " is already dead..." << std::endl;
-	else if (this->_Ep <= 0)
-		std::cout << "ScavTrap " << this->_Name << " don't have the energy to repair." << std::endl;
-	else
-	{
-		if ((int)(this->_Hp + amount) > this->_Maxhp)
-			this->_Hp = this->_Maxhp;
-		else
-			this->_Hp = this->_Hp + amount;
-		std::cout << "ScavTrap " << this->_Name << " repaire and is now at " << this->_Hp << " health points!" << std::endl;
 	}
 }

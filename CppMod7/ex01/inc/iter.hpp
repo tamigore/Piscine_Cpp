@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:33:35 by user42            #+#    #+#             */
-/*   Updated: 2022/03/20 16:02:05 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/20 15:58:25 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _FRAGTRAP_HPP_
-# define _FRAGTRAP_HPP_
+#ifndef _ITER_HPP_
+# define _ITER_HPP_
 
-#include "ClapTrap.hpp"
+#include <iostream>
 
-class FragTrap : public ClapTrap
+template<typename T>
+void	iter( T *tab, int len, void (*ptr)(T elem))
 {
-public:
-	FragTrap();
-	FragTrap(std::string name);
-	FragTrap(const FragTrap &data);
-	~FragTrap();
-
-	FragTrap	&operator=(const FragTrap &data);
-	
-	void	highFivesGuys(void) const;
-	void	attack(const std::string &target);
-};
+	for (int i = 0; i < len; i++)
+		ptr(tab[i]);
+}
 
 #endif

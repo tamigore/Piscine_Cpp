@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:02:25 by user42            #+#    #+#             */
-/*   Updated: 2022/03/20 15:58:23 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/20 16:09:02 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ int main()
 	std::cout << std::endl;
 	::iter(a, 50, fonc);
 	std::cout << std::endl;
+	delete[] a;
 	return (0);
 }

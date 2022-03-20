@@ -6,24 +6,28 @@
 #    By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 13:16:56 by tamigore          #+#    #+#              #
-#    Updated: 2022/03/15 14:27:07 by tamigore         ###   ########.fr        #
+#    Updated: 2022/03/20 12:44:48 by tamigore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-NAME = frag
+NAME = animal
 
 DIR_S = srcs/
 
 SOURCES =	main.cpp	\
 			Animal.cpp	\
 			Dog.cpp		\
-			Cat.cpp
+			Cat.cpp		\
+			WrongCat.cpp\
+			WrongAnimal.cpp
 
 HEADER =	Animal.hpp	\
 			Cat.hpp		\
-			Dog.hpp
+			Dog.hpp		\
+			WrongCat.hpp\
+			WrongAnimal.hpp
 
 INC = inc/
 

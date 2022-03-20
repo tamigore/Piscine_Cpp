@@ -6,13 +6,13 @@
 #    By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 13:16:56 by tamigore          #+#    #+#              #
-#    Updated: 2022/03/15 18:28:14 by tamigore         ###   ########.fr        #
+#    Updated: 2022/03/20 12:44:40 by tamigore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-NAME = frag
+NAME = animal
 
 DIR_S = srcs/
 

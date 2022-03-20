@@ -1,53 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 21:02:04 by user42            #+#    #+#             */
-/*   Updated: 2022/03/20 12:35:30 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/15 16:59:20 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal()
+WrongAnimal::WrongAnimal()
 {
-	this->_type = "Animal";
-	std::cout << "Animal is built by default." << std::endl;
+	this->_type = "WrongAnimal";
+	std::cout << "WrongAnimal is built by default." << std::endl;
 }
 
-Animal::Animal(const Animal &data)
+WrongAnimal::WrongAnimal(const WrongAnimal &data)
 {
 	this->_type = data.getType();
-	std::cout << "Animal " << this->_type << " is built by copy." << std::endl;
+	std::cout << "WrongAnimal " << this->_type << " is built by copy." << std::endl;
 }
 
-Animal::Animal(const std::string type)
+WrongAnimal::WrongAnimal(const std::string type)
 {
 	this->_type = type;
-	std::cout << "Animal " << this->_type << " is built." << std::endl;
+	std::cout << "WrongAnimal " << this->_type << " is built." << std::endl;
 }
 
-Animal	&Animal::operator=(const Animal &data)
+WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &data)
 {
 	if (this != &data)
 		*this = data;
 	return (*this);
 }
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "Animal " << this->_type << " is destroy." << std::endl;
+	std::cout << "WrongAnimal " << this->_type << " is destroy." << std::endl;
 }
 
-std::string	Animal::getType(void) const
+std::string	WrongAnimal::getType(void) const
 {
 	return(this->_type);
 }
 
-void	Animal::makeSound(void) const
+void	WrongAnimal::makeSound(void) const
 {
 	std::cout << "Grrrrrrrrrrrrrrr" << std::endl;
 }

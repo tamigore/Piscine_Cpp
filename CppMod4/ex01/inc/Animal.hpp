@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 21:01:01 by user42            #+#    #+#             */
-/*   Updated: 2022/03/15 15:17:25 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/22 13:00:35 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ public:
 
 	std::string	getType(void) const;
 	void		virtual makeSound(void) const;
+	std::string	getIdea(int n) const;
+	void		setIdea(int n, std::string mem) const;
 };
 
 #endif

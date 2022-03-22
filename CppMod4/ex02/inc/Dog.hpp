@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:33:35 by user42            #+#    #+#             */
-/*   Updated: 2022/03/16 15:46:31 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/22 12:56:12 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ public:
 
 	Dog	&operator=(const Dog &data);
 	
-	void	makeSound(void) const;
+	void		makeSound(void) const;
+	std::string	getIdea(const int n) const;
+	void		setIdea(const int n, std::string mem);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:02:25 by user42            #+#    #+#             */
-/*   Updated: 2022/03/20 12:53:55 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/22 12:59:41 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 
 int main()
 {
+	{
+		Dog toto("toto");
+		Dog tutu(toto);
+		Dog tata;
+
+		tata = toto;
+		std::cout << &toto << " " << &tutu << " " << &tata << std::endl;
+	}
 	{
 		int i = 0;
 		Animal	*copy[10];

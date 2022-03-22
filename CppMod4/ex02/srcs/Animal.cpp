@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 21:02:04 by user42            #+#    #+#             */
-/*   Updated: 2022/03/16 15:47:03 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/22 13:00:46 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ Animal::Animal(const std::string type)
 
 Animal	&Animal::operator=(const Animal &data)
 {
-	if (this != &data)
-		*this = data;
+	this->_type = data.getType();
+	std::cout << "Animal " << this->_type << " is built." << std::endl;
 	return (*this);
 }
 
@@ -47,7 +47,21 @@ std::string	Animal::getType(void) const
 	return(this->_type);
 }
 
-void	Animal::makeSound(void) const
+// void	Animal::makeSound(void) const
+// {
+// 	std::cout << "Grrrrrrrrrrrrrrr" << std::endl;
+// }
+
+std::string	Animal::getIdea(int n) const
 {
-	std::cout << "Grrrrrrrrrrrrrrr" << std::endl;
+	(void)n;
+	std::cout << "Not every Animal has a brain" << std::endl;
+	return ("");
+}
+
+void		Animal::setIdea(int n, std::string mem) const
+{
+	(void)n;
+	(void)mem;
+	std::cout << "Not every Animal has a brain" << std::endl;
 }

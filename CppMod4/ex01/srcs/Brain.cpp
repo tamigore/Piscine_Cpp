@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:19:40 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/15 18:09:58 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/22 12:59:52 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,15 @@ Brain::Brain()
 
 Brain::Brain(const Brain &data)
 {
-    *this = data;
+	*this = data;
 	std::cout << "Brain is built by copy." << std::endl;
 }
 
 Brain	&Brain::operator=(const Brain &data)
 {
-	if (this != &data)
-		*this = data;
+	for (int i = 0; i < 100; i++)
+    	this->ideas[i] = data.ideas[i];
+	std::cout << "Brain is built by copy." << std::endl;
 	return (*this);
 }
 

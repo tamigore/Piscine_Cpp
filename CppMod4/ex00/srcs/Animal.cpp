@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 21:02:04 by user42            #+#    #+#             */
-/*   Updated: 2022/03/20 12:35:30 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/22 12:18:50 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ Animal::Animal(const std::string type)
 
 Animal	&Animal::operator=(const Animal &data)
 {
-	if (this != &data)
-		*this = data;
+	this->_type = data.getType();
+	std::cout << "Animal " << this->_type << " is built by copy." << std::endl;
 	return (*this);
 }
 

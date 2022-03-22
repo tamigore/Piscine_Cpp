@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:33:35 by user42            #+#    #+#             */
-/*   Updated: 2022/03/20 17:21:40 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/21 17:30:40 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ public:
 
 	T	&operator[](const unsigned int i) const
 	{
-		if (i < 0 || i > this->_size)
+		if (i < 0 || i >= this->_size)
 			throw std::out_of_range ("Invalid Array index.");
 		return (*(this->_array + i));
 	}
@@ -74,11 +74,5 @@ public:
 	}
 	
 };
-
-template <typename T>
-std::ostream & operator<<( std::ostream & o, Array <T> const & data) {
-	o << &data;
-	return o;
-}
 
 #endif

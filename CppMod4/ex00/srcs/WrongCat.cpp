@@ -41,9 +41,8 @@ WrongCat	&WrongCat::operator=(const WrongCat &data)
 		*this = data;
 	return (*this);
 }
-/*
+
 void	WrongCat::makeSound(void) const
 {
 	std::cout << "Miaou..." << std::endl;
 }
-*/

@@ -6,19 +6,20 @@
 #    By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 13:16:56 by tamigore          #+#    #+#              #
-#    Updated: 2022/03/22 13:26:40 by tamigore         ###   ########.fr        #
+#    Updated: 2022/03/22 15:40:02 by tamigore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-NAME = easyfind
+NAME = span
 
 DIR_S = srcs/
 
-SOURCES =	main.cpp
+SOURCES =	main.cpp	\
+			Span.cpp
 
-HEADER =	easyfind.hpp
+HEADER =	Span.hpp
 
 INC = inc/
 

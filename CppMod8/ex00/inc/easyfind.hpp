@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:33:35 by user42            #+#    #+#             */
-/*   Updated: 2022/03/22 11:25:19 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/22 14:16:59 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,26 @@
 # define _EASYFIND_HPP_
 
 #include <iostream>
-#include <time.h>
-#include <stdlib.h>
+#include <vector>		// dynamic array	random access iterator
+#include <list>			// double linked list	bidirectional iterator
+#include <deque>		// double ended queue	random access iterator
+# include <algorithm>
+# include <stdexcept>
+
+class EasyNotFoundException : public std::exception
+{
+	public:
+		virtual const char * what() const throw ()
+		{
+			return ("ERROR: Nothing could be found");
+		}
+};
 
 template<typename T>
-T &easyFind( T *contai, int len, void (*ptr)(T elem))
+void    EasyFind(T cont, int nb)
 {
+    if (std::find(cont.begin(), cont.end(), nb) == cont.end())
+		throw EasyNotFoundException();
 }
 
 #endif

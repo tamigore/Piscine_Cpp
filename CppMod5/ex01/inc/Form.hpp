@@ -39,6 +39,7 @@ public:
 	int			getGrade(const char c) const;
 	bool		getSign(void) const;
 	void		setSign(bool i);
+	void		beSigned(const Bureaucrat &b);
 
 	class GradeTooHighException : public std::exception
 	{

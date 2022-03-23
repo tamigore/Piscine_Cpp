@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 17:13:20 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/17 14:35:43 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/23 17:00:15 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int main()
 	{
 		std::cout << *bureaucrat << " want to signe " << *doc << std::endl;
 		bureaucrat->signForm(*doc);
+		doc->beSigned(*bureaucrat);
 		bureaucrat->upGrade();
 		std::cout << bureaucrat->getName() << " upgraded ! Felicitations! " << std::endl;
 		std::cout << *bureaucrat << std::endl;

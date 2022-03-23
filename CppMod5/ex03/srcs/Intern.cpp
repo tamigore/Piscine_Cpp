@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 18:34:46 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/17 18:40:17 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/23 17:32:33 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Intern::Intern()
 
 Intern::Intern(const Intern & cpy)
 {
-	*this = cpy;
+	(void)cpy;
 }
 
 Intern::~Intern()
@@ -27,7 +27,7 @@ Intern::~Intern()
 
 Intern & Intern::operator=(const Intern & right)
 {
-	*this = right;
+	(void)right;
 	return (*this);
 }
 

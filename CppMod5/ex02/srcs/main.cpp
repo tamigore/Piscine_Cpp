@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 17:13:20 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/17 18:29:37 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/23 17:26:38 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ int main()
 	ShrubberyCreationForm	shrub("tree");
 	PresidentialPardonForm	president("Tadeo");
 	RobotomyRequestForm		robot("coco");
-	
-	
+	Form					*form = new ShrubberyCreationForm(shrub);
 	
 	try
 	{
+		form->execute(*bureaucrat);
 		std::cout << *bureaucrat << std::endl;
 		bureaucrat->upGrade();
 		std::cout << bureaucrat->getName() << " upgraded ! Felicitations! " << std::endl;
@@ -83,9 +83,9 @@ int main()
 	{
 		std::cerr << "Exception : " << e.what() << std::endl;
 	}
-
 	
 	delete bureaucrat;
 	delete stagiaire;
+	delete form;
 	return (0);
 }

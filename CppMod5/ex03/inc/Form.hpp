@@ -35,11 +35,14 @@ public:
 
 	Form	&operator=(const Form &data);
 
-	std::string		getName(void) const;
-	int				getGrade(const char c) const;
-	bool			getSign(void) const;
-	void			setSign(bool i);
+	std::string	getName(void) const;
+	int			getGrade(const char c) const;
+	bool		getSign(void) const;
+	void		setSign(bool i);
+	void		beSigned(const Bureaucrat &b);
+
 	virtual void	execute(Bureaucrat const & executor) const = 0;
+
 
 	class GradeTooHighException : public std::exception
 	{

@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 17:13:20 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/16 19:30:01 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/23 11:32:04 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
 	Bureaucrat	*bureaucrat = new Bureaucrat("Bob", 2);
 	Bureaucrat	*stagiaire = new Bureaucrat("Ted", 149);
-	
+
 	try
 	{
 		std::cout << *bureaucrat;

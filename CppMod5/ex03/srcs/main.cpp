@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 17:13:20 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/18 12:13:47 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/23 17:31:59 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int main()
 	PresidentialPardonForm	president("Tadeo");
 	RobotomyRequestForm		robot("coco");
 	Intern					noob;
+	Intern					random = noob;
+	Intern					copy(noob);
 	
 	try
 	{

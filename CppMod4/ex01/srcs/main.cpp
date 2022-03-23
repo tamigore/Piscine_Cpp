@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:02:25 by user42            #+#    #+#             */
-/*   Updated: 2022/03/22 12:59:41 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/23 12:06:25 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,16 @@ int main()
 	{
 		Dog toto("toto");
 		Dog tutu(toto);
+		Cat lolo("lolo");
+		Cat lala;
 		Dog tata;
 
+		lala = lolo;
+		for (int i = 0; i < 100; i++)
+			lala.setIdea(i, "lala");
+		std::cout <<"idea 1 : lala = " << lala.getIdea(1) << " | lolo = " << lolo.getIdea(1) << std::endl;
+		lolo = lala;
+		std::cout <<"idea 1 : lala = " << lala.getIdea(1) << " | lolo = " << lolo.getIdea(1) << std::endl;
 		tata = toto;
 		std::cout << &toto << " " << &tutu << " " << &tata << std::endl;
 	}

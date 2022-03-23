@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 17:13:52 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/16 19:26:19 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/23 11:27:14 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ public:
 	int			getGrade(void) const;
 	void		upGrade(void);
 	void		downGrade(void);
+
 	class GradeTooHighException : public std::exception
 	{
 		public:
@@ -44,6 +45,7 @@ public:
 			virtual ~GradeTooHighException() throw();
 			virtual const char* what() const throw();
 	};
+
 	class GradeTooLowException : public std::exception
 	{
 		public:

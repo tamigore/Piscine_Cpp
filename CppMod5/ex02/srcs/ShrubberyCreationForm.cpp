@@ -6,12 +6,13 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 17:15:09 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/17 18:27:53 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/23 17:22:53 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include "Bureaucrat.hpp"
+#define NB_TREE 2
 
 ShrubberyCreationForm::ShrubberyCreationForm() : Form("Shrubbery", 137, 145), _target("Nul")
 {
@@ -73,9 +74,10 @@ void		ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 	file.open(name.c_str(), std::fstream::in | std::fstream::out | std::ios::trunc);
 	if (file.is_open())
 	{
-		file << printTree() << printTree() << std::endl;
+		for (int i = 0; i < NB_TREE; i++)
+			file << printTree() << std::endl;
 		file.close();
 	}
 	else
-		std::cerr << "Error : failed to open." << std::endl;
+		std::cout << "Error : failed to open." << std::endl;
 }

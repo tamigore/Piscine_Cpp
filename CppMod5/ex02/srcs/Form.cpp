@@ -6,11 +6,11 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 17:15:09 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/17 15:19:34 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/23 17:10:01 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 Form::Form() : _name("Nul"), _sign(0),  _grade_s(150), _grade_e(150)
 {
@@ -68,6 +68,19 @@ bool		Form::getSign(void) const
 void		Form::setSign(bool i)
 {
 	this->_sign = i;
+}
+
+void		Form::beSigned(const Bureaucrat &b)
+{
+	if (this->_sign == 1)
+		std::cout << *this << "already signed." << std::endl;
+	if (b.getGrade() <= this->_grade_s)
+	{
+		this->setSign(1);
+		std::cout << *this << "was signed by "<< b << std::endl;
+	}
+	else
+		std::cout << *this << " can't be signed by "<< b << std::endl;
 }
 
 Form::GradeTooHighException::GradeTooHighException() throw() {}

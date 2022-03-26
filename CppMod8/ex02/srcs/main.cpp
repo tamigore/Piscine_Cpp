@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 17:03:11 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/26 14:22:09 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/26 16:52:42 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,9 +107,7 @@ int main()
 
 	//School main :
 	MutantStack<int>	mstack;
-	MutantStack<int>	twin(mstack);
 	MutantStack<int>	copy;
-	std::stack<int>		s(mstack);
 
 	mstack.push(5);
 	mstack.push(17);
@@ -125,16 +123,6 @@ int main()
 	++it;
 	--it;
 	std::cout << "Iterating mstack :" << std::endl;
-	while (it != ite)
-	{
-		std::cout << *it << std::endl;
-		++it;
-	}
-
-	it = twin.begin();
-	ite = twin.end();
-	
-	std::cout << "Iterating twin:" << std::endl;
 	while (it != ite)
 	{
 		std::cout << *it << std::endl;

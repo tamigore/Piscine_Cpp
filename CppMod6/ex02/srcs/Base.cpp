@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 17:15:09 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/19 15:29:13 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/24 15:02:33 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,12 @@ Base    *generate(void)
 
 void identify(Base &p)
 {
+	A 	a;
+	B	b;
+	C	c;
 	try
 	{
-		dynamic_cast<A &>(p);
+		a = dynamic_cast<A &>(p);
 		std::cout << "Reference is of type A" << std::endl;
 		return ;
 	}
@@ -47,7 +50,7 @@ void identify(Base &p)
 	}
 	try
 	{
-		dynamic_cast<B &>(p);
+		b = dynamic_cast<B &>(p);
 		std::cout << "Reference is of type B" << std::endl;
 		return ;
 	}
@@ -56,7 +59,7 @@ void identify(Base &p)
 	}
 	try
 	{
-		dynamic_cast<C &>(p);
+		c = dynamic_cast<C &>(p);
 		std::cout << "Reference is of type C" << std::endl;
 		return ;
 	}

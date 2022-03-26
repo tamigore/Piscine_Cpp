@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 17:13:20 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/19 15:29:44 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/24 14:52:14 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ int main()
 	d2 = res.deserialize(res.serialize(&data_ref));
 	std::cout << "serialize : " << nb << " | deserialize : " << d1 << " vs " << d2 << std::endl;
 	delete data;
+	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:33:35 by user42            #+#    #+#             */
-/*   Updated: 2022/03/20 15:14:21 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/25 17:58:02 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@
 #include <iostream>
 
 template<typename T>
-const T &max( T &A,  T &B) 
+const T &max(const T &A, const T &B) 
 {
 	return (A > B ? A : B); 
 }
 
 template<typename T>
-const T &min( T &A,  T & B) 
+const T &min(const T &A, const T &B) 
 {
 	return (A < B ? A : B); 
 }
 
 template<typename T>
-void	swap( T &A,  T & B) 
+void	swap(T &A,  T &B) 
 {
 	T	tmp = A;
 

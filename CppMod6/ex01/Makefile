@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: user42 <user42@student.42.fr>              +#+  +:+       +#+         #
+#    By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 13:16:56 by tamigore          #+#    #+#              #
-#    Updated: 2022/03/19 12:46:27 by user42           ###   ########.fr        #
+#    Updated: 2022/03/24 15:03:12 by tamigore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = c++
+CXX = c++
 
 NAME = serialize
 
@@ -32,10 +32,10 @@ FLAGS = -Wall -Werror -Wextra -std=c++98
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(OBJS) $(FLAGS) -o $(NAME)
+	$(CXX) $(OBJS) $(FLAGS) -o $(NAME)
 
 $(OBJS): $(SRCS) $(INC)
-	$(CC) -c $(SRCS) $(FLAGS) -I $(INC)
+	$(CXX) -c $(SRCS) $(FLAGS) -I $(INC)
 
 bonus: all
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 14:47:43 by user42            #+#    #+#             */
-/*   Updated: 2022/03/19 16:47:15 by user42           ###   ########.fr       */
+/*   Updated: 2022/03/24 14:44:55 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ char toChar(const double f, const std::string str)
 {
 	char c = static_cast<int>(f);
 
-	if (str.size() == 1 && std::isprint(str[0]) && (str[0] < '0' || str[0] > '9'))
+	if (str.size() == 1 && std::isprint(str[0]) && !std::isdigit(str[0]))
 		c = str[0];
 	if (std::isprint(c))
 		return c;
-	else if (c == 0 || str.length() == 0 || !std::isprint(c))
-		throw ImpossiblePrintException();
-	else
+	else if (!std::isprint(c) && c != str[0] && f == f && f >= 0 && f <= 127)
 		throw NonPrintException();
+	else
+		throw ImpossiblePrintException();
 }
 
 void	printChar(const float f, const std::string str)
@@ -107,7 +107,7 @@ void		printDouble(double f, std::string str)
 		last = "";
 	if (fractPart == 0 && str.find("e+") != std::string::npos)
 		last = "";
-	std::cout << "double: " << f << last << std::endl;
+	std::cout << "double: " << static_cast<float>(f) << last << std::endl;
 }
 
 int main(int ac, char **av)

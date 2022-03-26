@@ -6,20 +6,20 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 17:03:11 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/21 17:31:11 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/25 18:53:08 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
-#define MAX_VAL 500
+#define MAX_VAL 50
 
 int main(int, char**)
 {
 	Array<int>	numbers(MAX_VAL);
 	int*		mirror = new int[MAX_VAL];
 
-	srand(time(NULL));
+	srand(time(0));
 	std::cout << "Start :" << std::endl;
 	for (int i = 0; i < MAX_VAL; i++)
 	{
@@ -63,11 +63,6 @@ int main(int, char**)
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
-	}
-
-	for (int i = 0; i < MAX_VAL; i++)
-	{
-		numbers[i] = rand();
 	}
 
 	std::cout << "End :" << std::endl;

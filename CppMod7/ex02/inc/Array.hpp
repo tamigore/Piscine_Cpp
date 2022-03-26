@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:33:35 by user42            #+#    #+#             */
-/*   Updated: 2022/03/21 17:30:40 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/26 14:46:25 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ public:
 		_array = NULL;
 	}
 
-	Array<T>(const Array &data)
+	Array<T>(const Array &data) : _size(0), _array(NULL);
 	{
 		if (this->_size != data._size)
 		{

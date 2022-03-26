@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:33:35 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/23 14:41:47 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/26 14:02:56 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,6 @@ class MutantStack : public std::stack<T>
 
 		iterator const	begin(void) {return this->c.begin();}
 		iterator const	end(void) {return this->c.end();}
-
-		MutantStack(void){}
-		MutantStack(const MutantStack &data){*this = data;}
-		~MutantStack(void){}
-
-		MutantStack	&operator=(const MutantStack &data){return (data);}
 
 };
 

@@ -6,18 +6,18 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:31:54 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/22 16:40:55 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/28 17:42:47 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-Span::Span(void) : _N(0),_data()
+Span::Span(void) : _N(0), _data(0)
 {
 	std::cout << "Span constructor default" << std::endl;
 }
 
-Span::Span(unsigned int n) : _N(n), _data()
+Span::Span(unsigned int n) : _N(n), _data(0)
 {
 	std::cout << "Span constructor" << std::endl;
 }
@@ -50,10 +50,12 @@ void			Span::addNumber(int const nbr)
 
 void	Span::addNumber(std::vector<int>::iterator const a, std::vector<int>::iterator const b)
 {
-	if (b - a > _N)
+	if (b - a > this->_N)
 		throw Span::SpanIsFullException();
 	else
+	{
 		_data.assign(a, b);
+	}
 }
 
 unsigned int	Span::shortestSpan(void) const
@@ -69,10 +71,7 @@ unsigned int	Span::shortestSpan(void) const
 		while (it != (copy.end() - 1) && min)
 		{
 			if (abs(*(it + 1) - *it) < min)
-			{
 				min = abs(*(it + 1) - *it);
-				std::cout << "min : " << min << " | it : " << *it << " | it + 1 : " << *(it + 1) << std::endl;
-			}
 			it++;
 		}
 		return (min);

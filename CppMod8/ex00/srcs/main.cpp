@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 17:03:11 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/22 14:14:45 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/28 17:01:51 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int main(int, char**)
 {
 	std::vector<int>			test(10, 0);
 	std::vector<int>::iterator	it = test.begin();
-	int							sfor = 1;
 	int							i = 0;
 
 	while (it != test.end())
@@ -26,10 +25,10 @@ int main(int, char**)
 		it++;
 	}
 	std::cout << std::endl;
-	std::cout << ">>> " << sfor << " <<<";
+	std::cout << ">>> " << 1 << " <<<";
 	try
 	{
-		EasyFind(test, sfor);
+		EasyFind(test, 1);
 		std::cout << " was found !" << std::endl;
 	}
 	catch	(std::exception &e)
@@ -41,7 +40,6 @@ int main(int, char**)
 	//now with std::list container
 	std::list<int>				test1(20, 0);
 	std::list<int>::iterator	it1 = test1.begin();
-	int							sfor1 = 10;
 
 	i = 0;
 	while (it1 != test1.end())
@@ -51,10 +49,10 @@ int main(int, char**)
 		it1++;
 	}
 	std::cout << std::endl;
-	std::cout << ">>> " << sfor1 << " <<<";
+	std::cout << ">>> " << 10 << " <<<";
 	try
 	{
-		EasyFind(test1, sfor1);
+		EasyFind(test1, 10);
 		std::cout << " was found !" << std::endl;
 	}
 	catch	(std::exception &e)

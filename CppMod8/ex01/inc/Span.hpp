@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:33:35 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/22 16:39:58 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/28 17:05:10 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class Span
 	class SpanIsFullException : public std::exception
 	{
 		public:
-			virtual const char * what() const throw ()
+			virtual const char *what() const throw ()
 			{
 				return ("ERROR: Span max entries reached");
 			}
@@ -50,7 +50,7 @@ class Span
 	class SpanToFewObjectsException : public std::exception
 	{
 		public:
-			virtual const char * what() const throw ()
+			virtual const char *what() const throw ()
 			{
 				return ("ERROR: Span max entries reached");
 			}

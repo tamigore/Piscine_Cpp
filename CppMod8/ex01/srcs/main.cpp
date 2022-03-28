@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 17:03:11 by tamigore          #+#    #+#             */
-/*   Updated: 2022/03/22 16:41:34 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/28 17:40:44 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main()
 	{
 		Span	sp = Span(5);
 
+		std::cout << "Start with simple span" << std::endl;
 		try
 		{
 			sp.addNumber(6);
@@ -26,38 +27,25 @@ int main()
 			sp.addNumber(17);
 			sp.addNumber(9);
 			sp.addNumber(11);
+			std::cout << sp.shortestSpan() << std::endl;
+			std::cout << sp.longestSpan() << std::endl;
 		}
 		catch(const std::exception& e)
 		{
 			std::cerr << e.what() << '\n';
-			return (-1);
 		}
-		std::cout << sp.shortestSpan() << std::endl;
-		std::cout << sp.longestSpan() << std::endl;
+
+		for (unsigned long i = 0; i < sp._data.size(); i++)
+		{
+			std::cout << "Span[" << i << "] : " << sp._data[i] << std::endl;
+		}
 	}
 	{
-		Span	sp(500);
+		Span	sp(1000);
 
-		// for (int i = 0; i < 10000; i++)
-		// {
-			try
-			{
-				sp.addNumber(sp._data.begin(), sp._data.end());
-			}
-			catch(const std::exception& e)
-			{
-				std::cerr << e.what() << '\n';
-				return (-1);
-			}
-		// }
-		std::cout << sp.shortestSpan() << std::endl;
-		std::cout << sp.longestSpan() << std::endl;
-	}
-	{
-		Span	sp(100);
-
+		std::cout << "Second is random" << std::endl;
 		srand(time(0));
-		for (int i = 0; i < 100; i++)
+		for (int i = 0; i < 1000; i++)
 		{
 			try
 			{
@@ -66,12 +54,35 @@ int main()
 			catch(const std::exception& e)
 			{
 				std::cerr << e.what() << '\n';
-				return (-1);
 			}
 		}
-		std::cout << sp.shortestSpan() << std::endl;
-		std::cout << sp.longestSpan() << std::endl;
+		try
+		{
+				std::cout << sp.shortestSpan() << std::endl;
+				std::cout << sp.longestSpan() << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+				std::cerr << e.what() << '\n';
+		}
 		
+		Span	copy(100);
+
+		std::cout << "Third is assigned from second[0] to second[500]" << std::endl;
+		try
+		{
+			copy.addNumber(sp._data.begin(), sp._data.begin() + 100);
+			std::cout << copy.shortestSpan() << std::endl;
+			std::cout << copy.longestSpan() << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+		for (unsigned long i = 0; i < copy._data.size(); i++)
+		{
+			std::cout << "Span[" << i << "] : " << copy._data[i] << std::endl;
+		}
 	}
 	return 0;
 }

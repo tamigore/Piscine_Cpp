@@ -6,7 +6,7 @@
 /*   By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 11:33:35 by user42            #+#    #+#             */
-/*   Updated: 2022/03/26 16:36:16 by tamigore         ###   ########.fr       */
+/*   Updated: 2022/03/28 16:45:25 by tamigore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class EasyNotFoundException : public std::exception
 	public:
 		virtual const char * what() const throw ()
 		{
-			return ("ERROR: Nothing could be found");
+			return ("Error : Nothing could be found");
 		}
 };
 

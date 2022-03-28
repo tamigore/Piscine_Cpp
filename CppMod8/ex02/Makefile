@@ -6,11 +6,11 @@
 #    By: tamigore <tamigore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/09 13:16:56 by tamigore          #+#    #+#              #
-#    Updated: 2022/03/26 16:41:50 by tamigore         ###   ########.fr        #
+#    Updated: 2022/03/28 16:47:38 by tamigore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = c++
+CXX = c++
 
 NAME = mutant
 
@@ -31,10 +31,10 @@ FLAGS = -Wall -Werror -Wextra -std=c++98
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(OBJS) $(FLAGS) -o $(NAME)
+	$(CXX) $(OBJS) $(FLAGS) -o $(NAME)
 
 $(OBJS): $(SRCS) $(INC)$(HEADER)
-	$(CC) -c $(SRCS) $(FLAGS) -I $(INC)
+	$(CXX) -c $(SRCS) $(FLAGS) -I $(INC)
 
 bonus: all
 
